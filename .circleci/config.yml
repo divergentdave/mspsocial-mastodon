@@ -159,6 +159,9 @@ jobs:
       - *attach_workspace
       - *install_system_dependencies
       - run:
+          name: CI Debugging
+          command: 'ls vendor/bundle/ruby/*/gems'
+      - run:
           name: Create database
           command: ./bin/rails db:create
       - run:
