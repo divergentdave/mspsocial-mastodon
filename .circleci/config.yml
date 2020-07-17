@@ -183,7 +183,7 @@ jobs:
             rake --version
             gem install bundler:1.17.2 --conservative
             bundle env
-            BUNDLE_PATH= BUNDLE_APP_CONFIG= bundle env
+            bash -c 'unset BUNDLE_PATH; unset BUNDLE_APP_CONFIG; bundle env'
       - run:
           name: Create database
           command: ./bin/rails db:create
