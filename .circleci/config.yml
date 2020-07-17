@@ -83,6 +83,9 @@ aliases:
         - run:
             name: Install bundler dependencies
             command: bundle check || (bundle install && bundle clean)
+        - run:
+            name: CI debugging
+            command: ls ./vendor/bundle/
         - save_cache:
             key: v3-ruby-dependencies-{{ checksum "/tmp/.ruby-version" }}-{{ checksum "Gemfile.lock" }}
             paths:
@@ -159,8 +162,8 @@ jobs:
       - *attach_workspace
       - *install_system_dependencies
       - run:
-          name: CI Debugging
-          command: 'ls vendor/bundle/ruby/*/gems'
+          name: CI debugging
+          command: 'ls ./vendor/bundle/'
       - run:
           name: Create database
           command: ./bin/rails db:create
