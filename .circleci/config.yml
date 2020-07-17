@@ -76,12 +76,12 @@ aliases:
         - run:
             name: Set bundler settings
             command: |
-              bundle config clean 'true'
-              bundle config deployment 'true'
-              bundle config with 'pam_authentication'
-              bundle config without 'development production'
-              bundle config frozen 'true'
-              bundle config path $BUNDLE_PATH
+              bundle config --local clean 'true'
+              bundle config --local deployment 'true'
+              bundle config --local with 'pam_authentication'
+              bundle config --local without 'development production'
+              bundle config --local frozen 'true'
+              bundle config --local path $BUNDLE_PATH
               cat .bundle/config
         - run:
             name: Install bundler dependencies
