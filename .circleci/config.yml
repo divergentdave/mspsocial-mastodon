@@ -9,6 +9,7 @@ aliases:
           BUNDLE_RETRY: 3
           BUNDLE_APP_CONFIG: ./.bundle/
           BUNDLE_PATH: ./vendor/bundle/
+          DISABLE_SPRING: 1
           DB_HOST: localhost
           DB_USER: root
           RAILS_ENV: test
