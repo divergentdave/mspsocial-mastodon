@@ -103,7 +103,9 @@ aliases:
   - &hack_install_gems
       run:
         name: Install some more gems
-        command: 'gem install rake:13.0.1'
+        command: |
+          'gem install rake:13.0.1'
+          echo $BUNDLE_PATH
 
   - &test_steps
       parallelism: 4
