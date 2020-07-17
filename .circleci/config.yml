@@ -181,6 +181,8 @@ jobs:
             ls ./vendor/bundle/
             ls ./vendor/bundle/gems/
             rake --version
+            bundle env
+            BUNDLE_PATH= BUNDLE_APP_CONFIG= bundle env
       - run:
           name: Create database
           command: ./bin/rails db:create
